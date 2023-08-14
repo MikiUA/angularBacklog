@@ -1,0 +1,29 @@
+<div *ngIf="task" class='overlay-container'>
+    <div class='overlay'>
+        <div class='button close-button' (click)="close()">X</div>
+        <div class='button ok-button' (click)="ok()">OK</div>
+        <div class="tag-block">
+            <div class="button addTag-button" (click)="isCurrentlyAddingTag=true">add tag</div>
+            <div class="addTag-block" *ngIf="isCurrentlyAddingTag">
+                <select [(ngModel)]="currentNewTag" class="addTag-select" name="newTag">
+                    <option *ngFor="let tag of availibleTags" value={{tag}}>{{tag|uppercase}}</option>
+                </select>
+                <button (click)="addTag()" class="button">+</button>
+                <button (click)="isCurrentlyAddingTag=false" class="button">-</button>
+            </div>
+            <div *ngIf="!editable.tags||!editable.tags.length"><i>No tags provided</i></div>
+            <div class="tag-label" *ngFor="let tag of editable.tags">{{tag}}
+                <span (click)="removeTag(tag)" class="button">x</span>
+            </div>
+        </div>
+
+        <input class='title' [style.border-color]="color" [(ngModel)]="editable.label" placeholder="name">
+        <input class='description' [(ngModel)]="editable.description" placeholder="DESCRIPTION">
+        <div class="gradient-container">
+            <div class="gradient" id="gradient">
+                <input (change)="colorUpdate()" [(ngModel)]="editable.priority" type="range" id="slider" min="0"
+                    max="100" value="editable.priority">
+            </div>
+        </div>
+    </div>
+</div>

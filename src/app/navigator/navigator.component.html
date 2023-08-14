@@ -1,0 +1,8 @@
+<div>
+    <button routerLink="/all">
+        all
+    </button>
+    <button *ngFor="let tag of topLevelTags" routerLink="/{{tag}}">
+        {{tag}}
+    </button>
+</div>

@@ -1,0 +1,7 @@
+<h2 style="display: flex;">{{topTag|uppercase}} backlog
+    <b (click)="addTask()" class="add-btn">+</b>
+</h2>
+<div class="card-container">
+    <app-task-card *ngFor="let task of taskList" [task]=task></app-task-card>
+</div>
+<app-task-details></app-task-details>

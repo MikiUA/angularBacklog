@@ -1,0 +1,25 @@
+.add-btn {
+    margin-left: 1em;
+    display: block;
+    text-align: center;
+    border: 1px solid black;
+    border-radius: 50%;
+    width: 1em;
+    height: 1em;
+}
+
+.add-btn:hover {
+    background-color: lightgray;
+    cursor: pointer;
+}
+
+.card-container {
+    display: flex;
+    flex-direction: column;
+    width: fit-content;
+}
+
+.card-incontainer {
+    width: fit-content;
+    background: whitesmoke;
+}

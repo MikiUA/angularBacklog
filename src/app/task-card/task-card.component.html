@@ -1,0 +1,7 @@
+<div class="card">
+    <div class="info" (click)="open()">
+        <div class='title' [style.border-color]="borderColor">{{task.label}}</div>
+        <div class="description">{{task.description}}</div>
+    </div>
+    <div class="delbtn" (click)="delTask()">X</div>
+</div>
